@@ -1,4 +1,4 @@
-package com.mobiquity.locale;
+package com.atm.locale;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

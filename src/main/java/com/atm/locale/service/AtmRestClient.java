@@ -1,4 +1,4 @@
-package com.mobiquity.locale.service;
+package com.atm.locale.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -8,17 +8,15 @@ import org.springframework.web.client.RestTemplate;
 public class AtmRestClient {
 
 	@Value("${ing.url.locator.atm}")
-	private String ingAtmlURL;
+	private String ingAtmLocatorURL;
 
 	private RestTemplate template = new RestTemplate();
 
 	public String getAllATMLocations() {
 //		https://www.ing.nl/api/locator/atms/
-//			 The json response is not well formed, the number of invalid characters leads
-//			 the JSON contents
-//			 )]}',
+//	    The json response is not valid, it has invalid characters at the beginning )]}',
 //      Using substring to make it valid		
-		return template.getForObject(ingAtmlURL, String.class).substring(5);
+		return template.getForObject(ingAtmLocatorURL, String.class).substring(5);
 	}
 
 }

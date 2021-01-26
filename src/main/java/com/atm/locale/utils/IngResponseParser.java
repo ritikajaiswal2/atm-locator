@@ -1,4 +1,4 @@
-package com.mobiquity.locale.utils;
+package com.atm.locale.utils;
 
 import java.io.IOException;
 import java.util.Iterator;
